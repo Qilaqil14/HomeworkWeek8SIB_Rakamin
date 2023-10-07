@@ -25,10 +25,9 @@ const getFilmCategory = (req, res) => {
     film.title AS title,
     film.description AS description, 
     film.last_update AS film_last_update,
-    category.name AS category, 
-    category.last_update AS category_last_update
-    FROM film JOIN film_category
-    ON film.film_id = film_category.film_id JOIN category ON film_category.category_id = category.category_id
+    category.name AS category
+    FROM film JOIN film_category ON film.film_id = film_category.film_id 
+    JOIN category ON film_category.category_id = category.category_id
     WHERE category.name = '${category}'`,
     (err, result) => {
       if (err) {
