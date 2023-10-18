@@ -38,11 +38,6 @@ const getFilmCategory = (req, res) => {
   );
 };
 
-pool.connect((err, res) => {
-  console.log(err);
-  console.log("connect");
-});
-
 module.exports = {
   getFilm,
   getFilmId,
